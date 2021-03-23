@@ -1,0 +1,33 @@
+# Ansible 
++ Automation language wich makes up our ansible playbooks wich is YAML
+	# Install Ansible
+	+ Windows _python	
+		=>> pip install ansible
+	+ CentOs, RHEL,.
+		==> sudo yum install ansible
+	+ Ubuntu, Kali
+		==> sudo apt-get install ansible
+	# Check all my inventory "hosts" are ready
+	==> Inventory is a collection of hosts against which ansible can work with.(Hosts,Groups sources, Inventory-specific data, static or dynamic)
+		==> ansible all -m ping 
+	+ run uptime command on web group
+		==> ansible web -m command -a "uptime"
+	+ Discovered for localhost
+		==> ansible localhost -m setup
+		localhost | success >> {
+			"ansible_facts": {
+			"ansible_default_ipv4": {
+			"address": "192.168.1.37",
+			"alias": "wlan0",
+			"gateway": "192.168.1.1"
+			"interface": "wlan0"
+			"macaadress": "c4:85:08:3b:19:16",
+			"mtu": 1500,
+			"netmask": "255.255.255.0"
+			"network": "192.168.1.0"
+			"type": "ether"
+			},
+			}
+		
+		}
+		
